@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacto</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <div class="nav-links">
+      <a href="index.html">Inicio</a> |
+      <a href="avisos.html">Avisos</a> |
+      <a href="sobremi.html">Sobre mí</a> |
+      <a href="materias2025.html">Materias 2025</a> |
+      <a href="contacto.html">Contacto</a> |
+      <a href="DyDw.html">Diseño y Desarrollo Web</a>
+    </div>
+    <div class="theme-toggle">
+      <button id="modo-claro" class="theme-btn modo-claro-btn">
+        <span>☀️</span> Modo Claro
+      </button>
+      <button id="modo-oscuro" class="theme-btn modo-oscuro-btn">
+        <span>🌙</span> Modo Oscuro
+      </button>
+    </div>
+  </div>
+</nav>
+<main>
+  <h1>Formulario de Contacto</h1>
+  
+  <!-- Contenedor para mensajes -->
+  <div id="mensaje-container" class="mensaje-container"></div>
+  
+  <form id="contacto-form" class="contacto-form">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" class="form-input" required>
+      <span class="error-mensaje" id="nombre-error"></span>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" class="form-input" required>
+      <span class="error-mensaje" id="email-error"></span>
+    </div>
+    
+    <div class="form-group">
+      <label for="asunto">Asunto:</label>
+      <input type="text" id="asunto" name="asunto" class="form-input" required>
+      <span class="error-mensaje" id="asunto-error"></span>
+    </div>
+    
+    <div class="form-group">
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" class="form-textarea" required></textarea>
+      <span class="error-mensaje" id="mensaje-error"></span>
+    </div>
+    
+    <button type="submit" id="enviar-btn" class="btn-enviar">Enviar</button>
+  </form>
+</main>
+<footer>© 2025 Bautista Lammertyn</footer>
+
+<script src="contacto.js"></script>
+<script src="theme.js"></script>
+</body>
+</html>

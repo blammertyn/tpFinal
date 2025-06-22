@@ -1,0 +1,350 @@
+/* Variables CSS para temas */
+:root {
+  /* Tema claro (por defecto) */
+  --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --bg-secondary: white;
+  --text-primary: #333;
+  --text-secondary: white;
+  --nav-bg: #333;
+  --nav-text: white;
+  --nav-hover: #667eea;
+  --input-bg: #f8f9fa;
+  --input-border: #e1e5e9;
+  --input-focus: #667eea;
+  --btn-primary: linear-gradient(45deg, #667eea, #764ba2);
+  --btn-hover: rgba(102, 126, 234, 0.3);
+  --error-color: #e74c3c;
+  --success-bg: #d4edda;
+  --success-text: #155724;
+  --error-bg: #f8d7da;
+  --error-text: #721c24;
+  --shadow: 0 10px 30px rgba(0,0,0,0.2);
+  --footer-bg: #f1f1f1;
+  --link-color: #667eea;
+  --link-hover: #764ba2;
+}
+
+/* Tema oscuro */
+[data-theme="dark"] {
+  --bg-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --bg-secondary: #2d3748;
+  --text-primary: #e2e8f0;
+  --text-secondary: #f7fafc;
+  --nav-bg: #1a202c;
+  --nav-text: #e2e8f0;
+  --nav-hover: #667eea;
+  --input-bg: #4a5568;
+  --input-border: #718096;
+  --input-focus: #667eea;
+  --btn-primary: linear-gradient(45deg, #667eea, #764ba2);
+  --btn-hover: rgba(102, 126, 234, 0.3);
+  --error-color: #fc8181;
+  --success-bg: #22543d;
+  --success-text: #9ae6b4;
+  --error-bg: #742a2a;
+  --error-text: #feb2b2;
+  --shadow: 0 10px 30px rgba(0,0,0,0.5);
+  --footer-bg: #2d3748;
+  --link-color: #90cdf4;
+  --link-hover: #63b3ed;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-primary);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+nav {
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  color: var(--nav-text);
+  margin-right: 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--nav-hover);
+}
+
+/* Estilos para los botones de tema */
+.theme-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.theme-btn {
+  padding: 8px 16px;
+  border: 2px solid var(--nav-text);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--nav-text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.theme-btn:hover {
+  background: var(--nav-text);
+  color: var(--nav-bg);
+  transform: translateY(-2px);
+}
+
+.theme-btn.active {
+  background: var(--nav-text);
+  color: var(--nav-bg);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.theme-btn span {
+  font-size: 16px;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilos para listas y enlaces */
+ul, ol {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+li {
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Estilos del formulario */
+.contacto-form {
+  background: var(--bg-secondary);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--text-primary);
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background: var(--input-bg);
+  color: var(--text-primary);
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  background: var(--bg-secondary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-input:hover, .form-textarea:hover {
+  border-color: var(--input-focus);
+  background: var(--bg-secondary);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.btn-enviar {
+  background: var(--btn-primary);
+  color: var(--text-secondary);
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-enviar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--btn-hover);
+}
+
+.btn-enviar:active {
+  transform: translateY(-1px);
+}
+
+.btn-enviar:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Estilos para mensajes de error */
+.error-mensaje {
+  color: var(--error-color);
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+  min-height: 20px;
+  transition: color 0.3s ease;
+}
+
+.form-input.error, .form-textarea.error {
+  border-color: var(--error-color);
+  background: var(--error-bg);
+}
+
+.form-input.error:focus, .form-textarea.error:focus {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* Contenedor de mensajes */
+.mensaje-container {
+  margin-bottom: 20px;
+  min-height: 50px;
+}
+
+.mensaje-exito {
+  background: var(--success-bg);
+  color: var(--success-text);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--success-text);
+  margin-bottom: 20px;
+  animation: slideIn 0.5s ease;
+  transition: all 0.3s ease;
+}
+
+.mensaje-error {
+  background: var(--error-bg);
+  color: var(--error-text);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--error-text);
+  margin-bottom: 20px;
+  animation: slideIn 0.5s ease;
+  transition: all 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para el título */
+h1 {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  transition: color 0.3s ease;
+}
+
+h2 {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+p {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+th, td {
+  border: 1px solid var(--input-border);
+  padding: 12px;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+th {
+  background: var(--input-bg);
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+tr:hover {
+  background: var(--input-bg);
+}
+
+footer {
+  background: var(--footer-bg);
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
