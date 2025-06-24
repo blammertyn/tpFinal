@@ -8,7 +8,7 @@ $(document).ready(function() {
         aplicarTema('light');
     }
     
-    // Event listeners para los botones de tema
+    
     $('#modo-claro').on('click', function() {
         cambiarTema('light');
     });
@@ -113,7 +113,7 @@ $(document).ready(function() {
         $(this).css('transform', 'translateY(0) scale(1)');
     });
     
-    // Detectar preferencia del sistema operativo (opcional)
+    // Detectar preferencia del sistema operativo
     function detectarPreferenciaSistema() {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             // Si el sistema prefiere modo oscuro y no hay tema guardado
@@ -148,7 +148,7 @@ $(document).ready(function() {
         cambiarTema(nuevoTema);
     };
     
-    // Atajo de teclado para alternar tema (Ctrl/Cmd + T)
+    // Atajo de teclado para alternar tema
     $(document).on('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 't') {
             e.preventDefault();
@@ -156,6 +156,6 @@ $(document).ready(function() {
         }
     });
     
-    // Mostrar información sobre el atajo de teclado
-    console.log('💡 Tip: Presiona Ctrl+T (o Cmd+T en Mac) para alternar entre temas rápidamente');
+    // Atajo de teclado
+    console.log('💡 Tip: Presiona Ctrl+T para alternar entre temas rápidamente');
 }); 
